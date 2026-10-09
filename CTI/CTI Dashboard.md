@@ -238,6 +238,8 @@ SORT length(rows) DESC
 
 ---
 
+## ⚙️ Plugin Configuration Status
+
 | Plugin | Status | Purpose |
 |--------|--------|---------|
 | **Dataview** | ✅ Required | Live queries, statistics, tables |
