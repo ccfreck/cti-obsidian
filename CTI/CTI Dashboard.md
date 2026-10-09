@@ -27,11 +27,11 @@
 ### Threat Actor Activity by Type
 ```dataview
 TABLE WITHOUT ID
-  type as "Type",
+  actor_type as "Type",
   length(rows) as "Count"
 FROM "CTI/Threat Actors"
-WHERE type
-GROUP BY type
+WHERE actor_type
+GROUP BY actor_type
 SORT length(rows) DESC
 ```
 
@@ -51,11 +51,11 @@ LIMIT 10
 ### Malware by Type
 ```dataview
 TABLE WITHOUT ID
-  type as "Malware Type",
+  malware_type as "Malware Type",
   length(rows) as "Count"
 FROM "CTI/Malware"
-WHERE type
-GROUP BY type
+WHERE malware_type
+GROUP BY malware_type
 SORT length(rows) DESC
 ```
 
@@ -102,7 +102,6 @@ TABLE WITHOUT ID
   file.link as "IOC Collection",
   entity as "Entity",
   entity_type as "Type",
-  classification as "TLP",
   status as "Status"
 FROM "CTI/IOCs"
 SORT file.mtime DESC
@@ -150,7 +149,7 @@ SORT file.name ASC
 ```dataview
 TABLE WITHOUT ID
   file.link as "Malware",
-  type as "Type",
+  malware_type as "Type",
   platform as "Platform"
 FROM "CTI/Malware"
 WHERE contains(threat_actors, "[[CTI/Threat Actors/APT1]]")
@@ -211,6 +210,30 @@ FROM "CTI/Reports"
 WHERE date_published
 SORT date_published DESC
 LIMIT 10
+```
+
+---
+
+## 🛠️ Tools by Category
+```dataview
+TABLE WITHOUT ID
+  tool_type as "Category",
+  length(rows) as "Count"
+FROM "CTI/Tools"
+WHERE tool_type
+GROUP BY tool_type
+SORT length(rows) DESC
+```
+
+## 📚 References by Type
+```dataview
+TABLE WITHOUT ID
+  ref_type as "Type",
+  length(rows) as "Count"
+FROM "CTI/References"
+WHERE ref_type
+GROUP BY ref_type
+SORT length(rows) DESC
 ```
 
 ---

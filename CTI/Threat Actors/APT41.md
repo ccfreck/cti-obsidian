@@ -1,11 +1,24 @@
 ---
 aliases: ["WICKED PANDA", "Winnti Group", "Barium", "APT41", "Double Dragon", "RedGolf"]
 tags: [threat-actor, apt, china, cybercrime]
-type: threat-actor
+type: APT
+actor_type: APT
+origin: China
 status: active
 confidence: high
 created: "2024-01-15"
 updated: "2024-12-15"
+campaigns:
+  - "[[CTI/Campaigns/Winnti Supply Chain 2013-2019]]"
+  - "[[CTI/Campaigns/APT41 2020 Campaign]]"
+  - "[[CTI/Campaigns/Log4j Exploitation 2021]]"
+malware:
+  - "[[CTI/Malware/PlugX]]"
+  - "[[CTI/Malware/ShadowPad]]"
+  - "[[CTI/Malware/Cobalt Strike]]"
+tools:
+  - "[[CTI/Tools/Mimikatz]]"
+  - "[[CTI/Tools/Sqlmap]]"
 ---
 
 # APT41 - Threat Actor Profile

@@ -2,6 +2,8 @@
 aliases: ["Mimikatz", "mimikatz"]
 tags: [tool, credential-theft, dual-use, post-exploitation]
 type: tool
+tool_type: Credential Theft
+category: Post-Exploitation
 status: active
 confidence: high
 created: "2024-01-15"

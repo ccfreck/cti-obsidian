@@ -1,11 +1,26 @@
 ---
 aliases: ["Fancy Bear", "Sofacy", "Sednit", "STRONTIUM", "APT28", "Pawn Storm"]
 tags: [threat-actor, apt, russia]
-type: threat-actor
+type: APT
+actor_type: APT
+origin: Russia
 status: active
 confidence: high
 created: "2024-01-15"
 updated: "2024-12-15"
+campaigns:
+  - "[[CTI/Campaigns/SolarWinds Supply Chain Attack]]"
+  - "[[CTI/Campaigns/US Election Interference 2016]]"
+  - "[[CTI/Campaigns/German Bundestag Hack 2015]]"
+  - "[[CTI/Campaigns/NotPetya 2017]]"
+  - "[[CTI/Campaigns/Olympic Destroyer 2018]]"
+malware:
+  - "[[CTI/Malware/X-Agent]]"
+  - "[[CTI/Malware/Zebrocy]]"
+  - "[[CTI/Malware/Cobalt Strike]]"
+tools:
+  - "[[CTI/Tools/Mimikatz]]"
+  - "[[CTI/Tools/Responder]]"
 ---
 
 # APT28 - Threat Actor Profile

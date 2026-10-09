@@ -1,11 +1,24 @@
 ---
 aliases: ["Hidden Cobra", "Guardians of Peace", "Lazarus Group", "APT38", "Bluenoroff", "Andariel", "Diamond Sleet"]
 tags: [threat-actor, apt, north-korea, cybercrime]
-type: threat-actor
+type: APT
+actor_type: APT
+origin: North Korea
 status: active
 confidence: high
 created: "2024-01-15"
 updated: "2024-12-15"
+campaigns:
+  - "[[CTI/Campaigns/WannaCry Ransomware 2017]]"
+  - "[[CTI/Campaigns/Operation Troy 2009-2012]]"
+  - "[[CTI/Campaigns/Sony Pictures Hack 2014]]"
+  - "[[CTI/Campaigns/Bangladesh Bank Heist 2016]]"
+malware:
+  - "[[CTI/Malware/WannaCry]]"
+  - "[[CTI/Malware/Dtrack]]"
+  - "[[CTI/Malware/Cobalt Strike]]"
+tools:
+  - "[[CTI/Tools/Mimikatz]]"
 ---
 
 # Lazarus Group - Threat Actor Profile

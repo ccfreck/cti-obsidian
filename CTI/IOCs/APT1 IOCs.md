@@ -6,6 +6,8 @@ status: active
 confidence: high
 created: "2024-01-15"
 updated: "2024-12-15"
+entity: APT1
+entity_type: Threat Actors
 ---
 
 # APT1 IOC Collection

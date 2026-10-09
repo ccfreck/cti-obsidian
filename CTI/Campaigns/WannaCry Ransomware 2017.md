@@ -6,6 +6,15 @@ status: completed
 confidence: high
 created: "2024-01-15"
 updated: "2024-12-15"
+threat_actors:
+  - "[[CTI/Threat Actors/Lazarus Group]]"
+malware:
+  - "[[CTI/Malware/WannaCry]]"
+tools:
+  - "[[CTI/Tools/ETERNALBLUE]]"
+  - "[[CTI/Tools/DOUBLEPULSAR]]"
+start_date: "2017-05-12"
+end_date: "2017-05-15"
 ---
 
 # WannaCry Ransomware 2017 - Campaign Profile
