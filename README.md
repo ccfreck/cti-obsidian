@@ -8,6 +8,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ---
+<img width="1458" height="696" alt="cti-obsidian" src="https://github.com/user-attachments/assets/43104ff9-f533-494e-9183-6984bf0feabc" />
 
 ## 🎯 What Is This?
 
