@@ -2,6 +2,7 @@
 aliases: ["Mandiant APT1 Report", "APT1 Mandiant Report"]
 tags: [reference, report, apt1, china, mandate]
 type: reference
+ref_type: Report
 status: active
 confidence: high
 created: "2024-01-15"

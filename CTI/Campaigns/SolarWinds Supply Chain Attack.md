@@ -6,6 +6,18 @@ status: completed
 confidence: high
 created: "2024-01-15"
 updated: "2024-12-15"
+threat_actors:
+  - "[[CTI/Threat Actors/APT28]]"
+malware:
+  - "[[CTI/Malware/SUNBURST]]"
+  - "[[CTI/Malware/TEARDROP]]"
+  - "[[CTI/Malware/RAINDROP]]"
+  - "[[CTI/Malware/Cobalt Strike]]"
+tools:
+  - "[[CTI/Tools/Mimikatz]]"
+  - "[[CTI/Tools/Rubeus]]"
+start_date: "2019-09-01"
+end_date: "2020-12-13"
 ---
 
 # SolarWinds Supply Chain Attack - Campaign Profile

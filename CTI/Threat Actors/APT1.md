@@ -1,11 +1,22 @@
 ---
 aliases: ["Comment Crew", "Comment Panda", "GIF89a", "BrownFox"]
 tags: [threat-actor, apt, china]
-type: threat-actor
+type: APT
+actor_type: APT
+origin: China
 status: active
 confidence: high
 created: "2024-01-15"
 updated: "2024-12-15"
+campaigns: 
+  - "[[CTI/Campaigns/SolarWinds Supply Chain Attack]]"
+  - "[[CTI/Campaigns/APT1 2006-2013 Campaign]]"
+malware:
+  - "[[CTI/Malware/PlugX]]"
+  - "[[CTI/Malware/PoisonIvy]]"
+  - "[[CTI/Malware/Gh0st RAT]]"
+tools:
+  - "[[CTI/Tools/Mimikatz]]"
 ---
 
 # APT1 - Threat Actor Profile
