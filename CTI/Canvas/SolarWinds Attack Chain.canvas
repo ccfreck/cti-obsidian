@@ -1,248 +1,35 @@
 {
-  "nodes": [
-    {
-      "id": "node-1",
-      "type": "text",
-      "x": -1200,
-      "y": -400,
-      "width": 300,
-      "height": 100,
-      "text": "# SolarWinds SUNBURST Attack Chain\n\n**Campaign:** SolarWinds Supply Chain Attack\n**Actor:** APT29 (NOBELIUM)\n**Period:** Sep 2019 - Dec 2020",
-      "fontSize": 16,
-      "color": "#1e1e1e",
-      "backgroundColor": "#ffeb3b"
-    },
-    {
-      "id": "node-2",
-      "type": "file",
-      "x": -1200,
-      "y": -100,
-      "width": 300,
-      "height": 400,
-      "file": "CTI/Campaigns/SolarWinds Supply Chain Attack.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-3",
-      "type": "file",
-      "x": -800,
-      "y": -400,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/Threat Actors/APT29.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-4",
-      "type": "file",
-      "x": -400,
-      "y": -400,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/Malware/SUNBURST.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-5",
-      "type": "file",
-      "x": -400,
-      "y": -100,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/Malware/TEARDROP.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-6",
-      "type": "file",
-      "x": -400,
-      "y": 200,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/Malware/RAINDROP.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-7",
-      "type": "file",
-      "x": 0,
-      "y": -400,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/Tools/Cobalt Strike.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-8",
-      "type": "file",
-      "x": 0,
-      "y": -100,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/Tools/Mimikatz.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-9",
-      "type": "file",
-      "x": 0,
-      "y": 200,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/Tools/Rubeus.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-10",
-      "type": "text",
-      "x": -800,
-      "y": 200,
-      "width": 350,
-      "height": 300,
-      "text": "## Attack Flow\n\n1. **Supply Chain Compromise** (T1195.002)\n   → SolarWinds build server compromised\n   → SUNBURST injected into Orion updates\n\n2. **Initial Access** (T1195.002)\n   → 18,000 orgs install compromised update\n   → SUNBURST executes on victim systems\n\n3. **Execution & Persistence**\n   → PowerShell (T1059.001)\n   → TEARDROP/RAINDROP loaders\n   → Cobalt Strike Beacon\n\n4. **Credential Access**\n   → Mimikatz (T1003.001)\n   → DCSync (T1003.006)\n   → Kerberoasting (T1558.003)\n\n5. **Lateral Movement**\n   → Pass-the-Hash (T1021.004)\n   → Pass-the-Ticket (T1550.003)\n\n6. **Cloud Pivot**\n   → Golden SAML / Azure AD token forgery\n   → Access Office 365 / Azure\n\n7. **Collection & Exfil**\n   → Email, source code, docs\n   → Exfil over C2 (T1041)",
-      "fontSize": 14,
-      "color": "#1e1e1e",
-      "backgroundColor": "#e3f2fd"
-    },
-    {
-      "id": "node-11",
-      "type": "text",
-      "x": 400,
-      "y": -400,
-      "width": 350,
-      "height": 300,
-      "text": "## Key IOCs\n\n**SUNBURST Hashes:**\n- a1b2c3d4e5f6789012345678901234ab\n- b2c3d4e5f6a7890123456789012345bc\n\n**C2 Domains:**\n- avsvmcloud.com\n- deftsecurity.com\n- freescanonline.com\n- thedoccloud.com\n- highdatabase.com\n\n**C2 IPs:**\n- 203.0.113.45\n- 198.51.100.23\n- 192.0.2.67\n\n**TEARDROP/RAINDROP:**\n- Memory-only loaders\n- Load Cobalt Strike Beacon\n- No disk artifacts",
-      "fontSize": 14,
-      "color": "#1e1e1e",
-      "backgroundColor": "#ffebee"
-    },
-    {
-      "id": "node-12",
-      "type": "text",
-      "x": 400,
-      "y": 100,
-      "width": 350,
-      "height": 200,
-      "text": "## Detection Opportunities\n\n**Network:**\n- DNS queries to C2 domains\n- HTTPS to unknown cloud IPs\n- Unusual outbound from Orion servers\n\n**Endpoint:**\n- SolarWinds.BusinessLayerHost.exe → PowerShell\n- Unsigned DLL loads (SUNBURST)\n- Cobalt Strike Beacon artifacts\n- Mimikatz LSASS access\n\n**Identity:**\n- DCSync replication requests\n- Golden SAML token anomalies\n- Azure AD token replay\n\n**Cloud:**\n- Unusual Azure AD app registrations\n- Suspicious OAuth consent grants\n- Cross-tenant access anomalies",
-      "fontSize": 14,
-      "color": "#1e1e1e",
-      "backgroundColor": "#e8f5e9"
-    },
-    {
-      "id": "node-13",
-      "type": "file",
-      "x": 400,
-      "y": 300,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/IOCs/SolarWinds IOCs.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-14",
-      "type": "file",
-      "x": 400,
-      "y": 500,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/References/Microsoft SolarWinds Analysis.md",
-      "subpath": ""
-    },
-    {
-      "id": "node-15",
-      "type": "file",
-      "x": -800,
-      "y": 500,
-      "width": 300,
-      "height": 200,
-      "file": "CTI/References/FireEye SUNBURST Analysis.md",
-      "subpath": ""
-    }
-  ],
-  "edges": [
-    {
-      "id": "edge-1",
-      "fromNode": "node-1",
-      "toNode": "node-2",
-      "label": "Details"
-    },
-    {
-      "id": "edge-2",
-      "fromNode": "node-2",
-      "toNode": "node-3",
-      "label": "Attribution"
-    },
-    {
-      "id": "edge-3",
-      "fromNode": "node-2",
-      "toNode": "node-4",
-      "label": "Primary Implant"
-    },
-    {
-      "id": "edge-4",
-      "fromNode": "node-4",
-      "toNode": "node-5",
-      "label": "Loads"
-    },
-    {
-      "id": "edge-5",
-      "fromNode": "node-5",
-      "toNode": "node-6",
-      "label": "Loads"
-    },
-    {
-      "id": "edge-6",
-      "fromNode": "node-5",
-      "toNode": "node-7",
-      "label": "Deploys"
-    },
-    {
-      "id": "edge-7",
-      "fromNode": "node-7",
-      "toNode": "node-8",
-      "label": "Uses"
-    },
-    {
-      "id": "edge-8",
-      "fromNode": "node-7",
-      "toNode": "node-9",
-      "label": "Uses"
-    },
-    {
-      "id": "edge-9",
-      "fromNode": "node-2",
-      "toNode": "node-10",
-      "label": "Flow"
-    },
-    {
-      "id": "edge-10",
-      "fromNode": "node-2",
-      "toNode": "node-11",
-      "label": "IOCs"
-    },
-    {
-      "id": "edge-11",
-      "fromNode": "node-2",
-      "toNode": "node-12",
-      "label": "Detection"
-    },
-    {
-      "id": "edge-12",
-      "fromNode": "node-11",
-      "toNode": "node-13",
-      "label": "Full List"
-    },
-    {
-      "id": "edge-13",
-      "fromNode": "node-2",
-      "toNode": "node-14",
-      "label": "Ref: Microsoft"
-    },
-    {
-      "id": "edge-14",
-      "fromNode": "node-2",
-      "toNode": "node-15",
-      "label": "Ref: FireEye"
-    }
-  ]
+	"nodes":[
+		{"id":"node-1","type":"text","x":-1200,"y":-400,"width":300,"height":100,"text":"# SolarWinds SUNBURST Attack Chain\n\n**Campaign:** SolarWinds Supply Chain Attack\n**Actor:** APT29 (NOBELIUM)\n**Period:** Sep 2019 - Dec 2020","fontSize":16,"color":"#1e1e1e","backgroundColor":"#ffeb3b"},
+		{"id":"node-2","type":"file","x":-1200,"y":-100,"width":300,"height":400,"file":"CTI/Campaigns/SolarWinds Supply Chain Attack.md","subpath":""},
+		{"id":"node-3","type":"file","x":-800,"y":-400,"width":300,"height":200,"file":"CTI/Threat Actors/APT29.md","subpath":""},
+		{"id":"node-4","type":"file","x":-400,"y":-400,"width":300,"height":200,"file":"CTI/Malware/SUNBURST.md","subpath":""},
+		{"id":"node-5","type":"file","x":-400,"y":-100,"width":300,"height":200,"file":"CTI/Malware/TEARDROP.md","subpath":""},
+		{"id":"node-6","type":"file","x":-400,"y":200,"width":300,"height":200,"file":"CTI/Malware/RAINDROP.md","subpath":""},
+		{"id":"node-7","type":"file","x":0,"y":-400,"width":300,"height":200,"file":"CTI/Tools/Cobalt Strike.md","subpath":""},
+		{"id":"node-8","type":"file","x":0,"y":-100,"width":300,"height":200,"file":"CTI/Tools/Mimikatz.md","subpath":""},
+		{"id":"node-9","type":"file","x":0,"y":200,"width":300,"height":200,"file":"CTI/Tools/Rubeus.md","subpath":""},
+		{"id":"node-10","type":"text","x":-800,"y":200,"width":350,"height":300,"text":"## Attack Flow\n\n1. **Supply Chain Compromise** (T1195.002)\n   → SolarWinds build server compromised\n   → SUNBURST injected into Orion updates\n\n2. **Initial Access** (T1195.002)\n   → 18,000 orgs install compromised update\n   → SUNBURST executes on victim systems\n\n3. **Execution & Persistence**\n   → PowerShell (T1059.001)\n   → TEARDROP/RAINDROP loaders\n   → Cobalt Strike Beacon\n\n4. **Credential Access**\n   → Mimikatz (T1003.001)\n   → DCSync (T1003.006)\n   → Kerberoasting (T1558.003)\n\n5. **Lateral Movement**\n   → Pass-the-Hash (T1021.004)\n   → Pass-the-Ticket (T1550.003)\n\n6. **Cloud Pivot**\n   → Golden SAML / Azure AD token forgery\n   → Access Office 365 / Azure\n\n7. **Collection & Exfil**\n   → Email, source code, docs\n   → Exfil over C2 (T1041)","fontSize":14,"color":"#1e1e1e","backgroundColor":"#e3f2fd"},
+		{"id":"node-11","type":"text","x":400,"y":-400,"width":350,"height":300,"text":"## Key IOCs\n\n**SUNBURST Hashes:**\n- a1b2c3d4e5f6789012345678901234ab\n- b2c3d4e5f6a7890123456789012345bc\n\n**C2 Domains:**\n- avsvmcloud.com\n- deftsecurity.com\n- freescanonline.com\n- thedoccloud.com\n- highdatabase.com\n\n**C2 IPs:**\n- 203.0.113.45\n- 198.51.100.23\n- 192.0.2.67\n\n**TEARDROP/RAINDROP:**\n- Memory-only loaders\n- Load Cobalt Strike Beacon\n- No disk artifacts","fontSize":14,"color":"#1e1e1e","backgroundColor":"#ffebee"},
+		{"id":"node-12","type":"text","x":400,"y":100,"width":350,"height":200,"text":"## Detection Opportunities\n\n**Network:**\n- DNS queries to C2 domains\n- HTTPS to unknown cloud IPs\n- Unusual outbound from Orion servers\n\n**Endpoint:**\n- SolarWinds.BusinessLayerHost.exe → PowerShell\n- Unsigned DLL loads (SUNBURST)\n- Cobalt Strike Beacon artifacts\n- Mimikatz LSASS access\n\n**Identity:**\n- DCSync replication requests\n- Golden SAML token anomalies\n- Azure AD token replay\n\n**Cloud:**\n- Unusual Azure AD app registrations\n- Suspicious OAuth consent grants\n- Cross-tenant access anomalies","fontSize":14,"color":"#1e1e1e","backgroundColor":"#e8f5e9"},
+		{"id":"node-13","type":"file","x":400,"y":300,"width":300,"height":200,"file":"CTI/IOCs/SolarWinds IOCs.md","subpath":""},
+		{"id":"node-14","type":"file","x":400,"y":500,"width":300,"height":200,"file":"CTI/References/Microsoft SolarWinds Analysis.md","subpath":""},
+		{"id":"node-15","type":"file","x":-800,"y":500,"width":300,"height":200,"file":"CTI/References/FireEye SUNBURST Analysis.md","subpath":""}
+	],
+	"edges":[
+		{"id":"edge-1","fromNode":"node-1","toNode":"node-2","label":"Details","fromSide":"bottom","toSide":"top"},
+		{"id":"edge-2","fromNode":"node-2","toNode":"node-3","label":"Attribution","fromSide":"right","toSide":"bottom"},
+		{"id":"edge-3","fromNode":"node-2","toNode":"node-4","label":"Primary Implant","fromSide":"right","toSide":"left"},
+		{"id":"edge-4","fromNode":"node-4","toNode":"node-5","label":"Loads","fromSide":"bottom","toSide":"top"},
+		{"id":"edge-5","fromNode":"node-5","toNode":"node-6","label":"Loads","fromSide":"bottom","toSide":"top"},
+		{"id":"edge-6","fromNode":"node-5","toNode":"node-7","label":"Deploys","fromSide":"top","toSide":"bottom"},
+		{"id":"edge-7","fromNode":"node-7","toNode":"node-8","label":"Uses","fromSide":"bottom","toSide":"top"},
+		{"id":"edge-8","fromNode":"node-7","toNode":"node-9","label":"Uses","fromSide":"bottom","toSide":"top"},
+		{"id":"edge-9","fromNode":"node-2","toNode":"node-10","label":"Flow","fromSide":"right","toSide":"left"},
+		{"id":"edge-10","fromNode":"node-2","toNode":"node-11","label":"IOCs","fromSide":"right","toSide":"left"},
+		{"id":"edge-11","fromNode":"node-2","toNode":"node-12","label":"Detection","fromSide":"right","toSide":"left"},
+		{"id":"edge-12","fromNode":"node-11","toNode":"node-13","label":"Full List","fromSide":"bottom","toSide":"top"},
+		{"id":"edge-13","fromNode":"node-2","toNode":"node-14","label":"Ref: Microsoft","fromSide":"right","toSide":"left"},
+		{"id":"edge-14","fromNode":"node-2","toNode":"node-15","label":"Ref: FireEye","fromSide":"right","toSide":"top"}
+	]
 }
