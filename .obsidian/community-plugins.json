@@ -1,1 +1,9 @@
-[]
+[
+  "dataview",
+  "obsidian-excalidraw-plugin",
+  "execute-code",
+  "obsidian-icon-folder",
+  "obsidian-markmind",
+  "obsidian-paste-image-rename",
+  "persistent-graph"
+]
